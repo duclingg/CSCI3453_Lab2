@@ -22,7 +22,7 @@ class PCB {
         bool waiting;
         bool finished;
         bool preempted;
-        float time_of_completion;
+        float completion_time;
         float waiting_time;
         float turnaround_time;
         float response_time;
