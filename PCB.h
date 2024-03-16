@@ -32,7 +32,7 @@ public:
     };
 
     PCB(PCB& copy) {
-        pid = copy.getPid();
+        pid = copy.getPID();
         arrival = copy.getArrival();
         CPUBurst = copy.getCPUBurst();
         finish = copy.getFinish();
@@ -45,7 +45,7 @@ public:
     }
 
     // getters for basic record data
-    int getPid() { return pid; }
+    int getPID() { return pid; }
     float getArrival() { return arrival; }
     float getCPUBurst() { return CPUBurst; }
     float getFinish() { return finish; }
