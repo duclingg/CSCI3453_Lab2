@@ -1,7 +1,7 @@
-#include "Scheduler.h"
+#include "scheduler.h"
 #include "PCB.h"
-#include "Queue.h"
-#include "Readfile.h"
+#include "queue.h"
+#include "readfile.h"
 #include <iostream>
 #include <cstdlib>
 

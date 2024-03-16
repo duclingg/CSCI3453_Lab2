@@ -1,7 +1,7 @@
 #ifndef SCHEDULER_H
 #define SCHEDULER_H
 
-#include "Queue.h"
+#include "queue.h"
 #include "PCB.h"
 
 class Scheduler {

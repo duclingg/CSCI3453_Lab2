@@ -11,7 +11,7 @@ CXXFLAGS = -g
 
 LIBS = -lm
 
-OBJS = main.o PCB.o Scheduler.o Readfile.o
+OBJS = main.o PCB.o scheduler.o readfile.o
 
 TARGET = myScheduler
 

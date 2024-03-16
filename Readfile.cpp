@@ -1,6 +1,6 @@
-#include "Readfile.h"
+#include "readfile.h"
 #include "PCB.h"
-#include "Queue.h"
+#include "queue.h"
 #include <fstream>
 #include <cstdlib>
 #include <vector>
