@@ -1,51 +1,23 @@
 #include "PCB.h"
 
-PCB::PCB() {
-    PID = 0;
-    ARRIVAL_TIME = 0;
-    CPU_BURST = 0;
-    og_CPU_burst = 0;
-    time_of_completion = 0;
-    waiting_time = 0;
-    turnaround_time = 0;
-    response_time = 0;
-    context_switch_num = 0;
-    waiting = false;
-    finished = false;
-    preempted = false;
+using namespace std;
+
+void PCB::incrementWaiting(float inc) {
+    waiting += inc;
 }
 
-PCB::PCB(int* p_data) {
-    PID = p_data[0];
-	ARRIVAL_TIME = p_data[1];
-	CPU_BURST = p_data[2];
-	og_CPU_burst = CPU_BURST;
-	time_of_completion = 0;
-	waiting_time = 0;
-	turnaround_time = 0;
-	response_time = 0;
-	context_switch_num = 0;
-	waiting = false;
-	finished = false;
-	preempted = false;
+void PCB::incrementRunning(float inc) {
+    timeRemaining -= inc;
 }
 
-int PCB::getPID() {
-    return PID;
+void PCB::done(float time) {
+    finish = time;
+    turnaround = finish - arrival;
 }
 
-int PCB::getArrivalTime() {
-    return ARRIVAL_TIME;
-}
-
-int PCB::getCPUBurst() {
-    return CPU_BURST;
-}
-
-void PCB::setCPUBurst(int burst) {
-    CPU_BURST = burst;
-}
-
-void PCB::progress() {
-    --CPU_BURST;
+string PCB::results() {
+    ostringstream output;
+    output << setw(4) << pid << setw(8) << arrival << setw(9) << CPUBurst << setw(7) << finish 
+    << setw(8) << waiting << setw(11) << turnaround << setw(9) << response << setw(9) << context;
+    return output.str();
 }
